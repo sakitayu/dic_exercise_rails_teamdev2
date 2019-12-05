@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+.agenda_delete {
+  float: left;
+  font-size:10px;
+  font-weight:bold;
+}
