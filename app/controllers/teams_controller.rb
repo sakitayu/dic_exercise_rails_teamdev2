@@ -30,6 +30,10 @@ class TeamsController < ApplicationController
   end
 
   def update
+    if @team.update(owner_id: params[:team][:owner_id])
+      TeamMailer.team_mail(@team).deliver
+    end
+
     if @team.update(team_params)
       redirect_to @team, notice: I18n.t('views.messages.update_team')
     else
